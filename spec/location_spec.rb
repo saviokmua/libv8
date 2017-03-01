@@ -7,7 +7,7 @@ describe "libv8 locations" do
 
   describe "the system location" do
     before do
-      @location = Libv8::Location::System.new
+      @location = Libv8::System.new
       @context.stub(:dir_config)
     end
 
@@ -50,7 +50,7 @@ describe "libv8 locations" do
 
   describe "the vendor location" do
     before do
-      @location = Libv8::Location::Vendor.new
+      @location = Libv8::Vendor.new
       @context.stub(:incflags) {@incflags ||= "-I/usr/include -I/usr/local/include"}
       @context.stub(:ldflags) {@ldflags ||= "-lobjc -lpthread"}
 
