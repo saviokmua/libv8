@@ -7,7 +7,7 @@ describe "libv8 locations" do
 
   describe "the system location" do
     before do
-      @location = Libv8::Location::System.new
+      @location = Libv8::System.new
       allow(@context).to receive :dir_config
     end
 
@@ -50,7 +50,7 @@ describe "libv8 locations" do
 
   describe "the vendor location" do
     before do
-      @location = Libv8::Location::Vendor.new
+      @location = Libv8::Vendor.new
       allow(@context).to receive(:incflags) {@incflags ||= "-I/usr/include -I/usr/local/include"}
       allow(@context).to receive(:ldflags) {@ldflags ||= "-lobjc -lpthread"}
 
