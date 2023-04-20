@@ -5,6 +5,7 @@ module Libv8
     module_function
 
     def patch!
+      return
       File.open(".applied_patches", File::RDWR|File::CREAT) do |f|
         available_patches = Dir.glob(File.join(PATCH_DIRECTORY, '*.patch'))
         applied_patches = f.readlines.map(&:chomp)
