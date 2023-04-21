@@ -32,7 +32,7 @@ describe "libv8 locations" do
       end
 
       it "raises a NotFoundError" do
-        expect {@location.configure @context}.to raise_error Libv8::Location::System::NotFoundError
+        expect {@location.configure @context}.to raise_error Libv8::System::NotFoundError
       end
     end
 
@@ -43,7 +43,7 @@ describe "libv8 locations" do
       end
 
       it "raises a NotFoundError" do
-        expect {@location.configure @context}.to raise_error Libv8::Location::System::NotFoundError
+        expect {@location.configure @context}.to raise_error Libv8::System::NotFoundError
       end
     end
   end

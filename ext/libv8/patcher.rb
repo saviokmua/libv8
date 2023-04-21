@@ -1,3 +1,5 @@
+require 'byebug'
+
 module Libv8
   module Patcher
     PATCH_DIRECTORY = File.expand_path '../../../patches', __FILE__
@@ -12,6 +14,7 @@ module Libv8
         (available_patches - applied_patches).each do |patch|
           puts "Applying #{patch}"
           `patch -p1 -N < #{patch}`
+          puts "===== result #{$?}"
           fail "failed to apply patch #{patch}" unless $?.success?
           f.puts patch
         end
